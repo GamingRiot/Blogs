@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background: #0f102b;
+}
+.jumbotron {
+  text-align: center;
+  font-size: 78px;
+  color: white;
+  font-weight: 600;
+}
+.jumbotron-sub {
+  text-align: center;
+  font-size: 38px;
+  color: #94a1b2;
+}
+.btn-add {
+  background: #2cb67d;
+  border: none;
+}
+.btn-view {
+  background: #7f5af0;
+  border: none;
+}
+.main-img {
+  width: 650px;
+}
+.blog-buttons {
+  text-align: center;
+}
+.logo {
+  color: white !important;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.nav-item {
+  color: white !important;
+  font-size: 20px;
+}
+.nav-item:hover {
+  color: #ff5470 !important;
+}
+.submitInput {
+  width: 100px;
+  height: 40px;
+  border: none;
+  background: #00b07b;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.add-title {
+  color: white;
+  font-weight: 600;
+  font-size: 42px;
+}
+.add-header {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+}

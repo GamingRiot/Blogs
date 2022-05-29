@@ -14,7 +14,7 @@ if (!$fetch) {
   <?php
   include "bootstrap.php";
   ?>
-  <title>Document</title>
+  <title?>View Blogs</title>
 </head>
 
 <body>
@@ -29,14 +29,14 @@ if (!$fetch) {
     }
     ?>
     <div class="d-flex mr-2">
-
       <?php foreach ($fetch as $value) { ?>
-        <div class='card' style='width: 18rem;margin-top:50px;margin-right:20px;'>
+        <div class='card' style='width: 18rem;margin-top:50px;margin-right:20px;background:#a6c8ff;'>
           <div class='card-body'>
             <div class="background-title" style="">
               <h5 class='card-title'><?php echo $value['title'] ?></h5>
             </div>
             <p class='card-text'><?php echo $value['description'] ?></p>
+            <a href="#" class="btn btn-primary">Read-></a>
           </div>
         </div>
       <?php } ?>

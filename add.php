@@ -31,18 +31,7 @@ if (isset($_POST['submit'])) {
   include 'bootstrap.php';
   ?>
   <title>Add Blog</title>
-  <style>
-    .submitInput {
-      width: 100px;
-      height: 40px;
-      border: none;
-      background: #00b07b;
-      color: white;
-      font-weight: 600;
-      font-size: 18px;
-      border-radius: 10px;
-    }
-  </style>
+
 </head>
 
 <body>
@@ -50,12 +39,12 @@ if (isset($_POST['submit'])) {
   include 'navbar.php'
   ?>
 
-  <div class="container">
-    <h1>Add your blog here!</h1>
+  <div class="container mt-5">
+    <h1 class="add-title">Add your blog here!</h1>
     <div class="form-container mt-5">
       <form method="POST" action="">
-        <div class=" mb-3">
-          <label for="title" class="form-label">Add Title</label>
+        <div class="mb-5">
+          <label for="title" class="form-label add-header">Add Title</label>
           <input type="text" class="form-control" id="title" name="title" placeholder="Enter Your Title">
           <?php if (isset($title_err)) {
           ?>
@@ -65,7 +54,7 @@ if (isset($_POST['submit'])) {
           <?php } ?>
         </div>
         <div class="mb-3">
-          <label for="description" class="form-label">Add description</label>
+          <label for="description" class="form-label add-header">Add description</label>
           <textarea class="form-control" id="description" name="description" rows="5"></textarea>
           <?php if (isset($desc_err)) {
           ?>
