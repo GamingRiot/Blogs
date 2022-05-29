@@ -14,13 +14,13 @@ if (!$fetch) {
   <?php
   include "bootstrap.php";
   ?>
-  <title?>View Blogs</title>
+  <title>View Blogs</title>
 </head>
 
 <body>
   <div class="container">
     <?php
-    if (isset($_REQUEST['result'])) {
+    if (isset($_REQUEST['result']) == "added") {
     ?>
       <div class="alert alert-success mt-5" role="alert">
         Post added successfully!
@@ -32,11 +32,11 @@ if (!$fetch) {
       <?php foreach ($fetch as $value) { ?>
         <div class='card' style='width: 18rem;margin-top:50px;margin-right:20px;background:#a6c8ff;'>
           <div class='card-body'>
-            <div class="background-title" style="">
+            <div class="background-title">
               <h5 class='card-title'><?php echo $value['title'] ?></h5>
             </div>
             <p class='card-text'><?php echo $value['description'] ?></p>
-            <a href="#" class="btn btn-primary">Read-></a>
+            <a href="view.php?id=<?php echo $value['id'] ?>" class="btn btn-primary">Read</a>
           </div>
         </div>
       <?php } ?>

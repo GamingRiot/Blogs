@@ -64,3 +64,16 @@ body {
   font-size: 22px;
   font-weight: 600;
 }
+.header-back {
+  background-color: #7858a6 !important;
+  text-align: center;
+  border-radius: 40px;
+}
+.view-title {
+  color: white !important;
+  font-weight: 500;
+}
+.view-desc {
+  color: white !important;
+  font-weight: 400;
+}
