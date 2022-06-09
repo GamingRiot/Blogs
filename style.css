@@ -77,3 +77,7 @@ body {
   color: white !important;
   font-weight: 400;
 }
+.btn-delete {
+  background: red;
+  border: none;
+}
