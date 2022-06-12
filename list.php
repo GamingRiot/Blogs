@@ -1,7 +1,8 @@
 <?php
+session_start();
 include "db.php";
 include "navbar.php";
-$fetch_query = "SELECT * from entries WHERE delete_status=0 ";
+$fetch_query = "SELECT * from entries WHERE delete_status= 0";
 $fetch = mysqli_query($conn, $fetch_query);
 if (!$fetch) {
   echo "Failed to display entries";
