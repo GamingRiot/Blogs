@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "db.php";
 if (isset($_REQUEST['signin'])) {
   $email = $_REQUEST['email'];
@@ -10,6 +11,7 @@ if (isset($_REQUEST['signin'])) {
     if ($pswd_match) {
       $_SESSION['email'] = $email;
       $_SESSION['username'] = $value['username'];
+      $_SESSION['user_id'] = $value['id'];
       header("Location:index.php");
       exit();
     }

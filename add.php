@@ -13,10 +13,12 @@ if (isset($_POST['submit'])) {
   if (!empty(($_POST['description']) && ($_POST['title']))) {
     $title = $_POST['title'];
     $desc = $_POST['description'];
-    $query = "INSERT INTO entries(title,description) VALUES('$title','$desc')";
+    $description = mysqli_real_escape_string($conn, $desc);
+    $user_id = $_SESSION['user_id'];
+    $query = "INSERT INTO entries(title,description,user_id) VALUES('$title','$description','$user_id')";
     $result_query = mysqli_query($conn, $query);
     if (!$result_query) {
-      echo "Failed";
+      echo "Failed" . mysqli_error($conn);
     } else {
       header("Location: list.php?result=added");
       exit();

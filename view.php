@@ -33,13 +33,15 @@ if (isset($_REQUEST['delete'])) {
     ?>
       <div class="header-back mt-5 p-5">
         <h1 class="view-title"><?php echo $value['title'] ?></h1>
-        <div class="blog-buttons mt-5">
-          <a href="edit.php?id=<?php echo $value['id']  ?>"><button type="button" class="btn btn-primary btn-add">Edit</button></a>
-          <form action="" method="POST">
-            <input type="text" hidden name="id" value="<?php echo $value['id'] ?>">
-            <input type="submit" value="Delete" name="delete" class="btn btn-danger btn-delete">
-          </form>
-        </div>
+        <?php if ($_SESSION['user_id'] == $value['user_id']) { ?>
+          <div class="blog-buttons mt-5">
+            <a href="edit.php?id=<?php echo $value['id']  ?>"><button type="button" class="btn btn-primary btn-add">Edit</button></a>
+            <form action="" method="POST">
+              <input type="text" hidden name="id" value="<?php echo $value['id'] ?>">
+              <input type="submit" value="Delete" name="delete" class="btn btn-danger btn-delete">
+            </form>
+          </div>
+        <?php } ?>
       </div>
       <div class="mt-5">
         <h1 class="view-desc"><?php echo $value['description'] ?></h1>

@@ -9,8 +9,9 @@ if (isset($_REQUEST['id'])) {
 if (isset($_REQUEST['submit'])) {
   $id = $_REQUEST['id'];
   $title = $_REQUEST['title'];
-  $desc = $_REQUEST['description'];
-  $sql = "UPDATE entries SET title = '$title', description = '$desc' WHERE id='$id'";
+  $desc = $_POST['description'];
+  $description = mysqli_real_escape_string($conn, $desc);
+  $sql = "UPDATE entries SET title = '$title', description = '$description' WHERE id='$id'";
   $update_blog = mysqli_query($conn, $sql);
   if ($update_blog) {
     header("Location: list.php?result=updated");

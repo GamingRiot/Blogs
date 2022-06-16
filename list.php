@@ -61,7 +61,7 @@ if (!$fetch) {
             <div class="background-title">
               <h5 class='card-title'><?php echo $value['title'] ?></h5>
             </div>
-            <p class='card-text'><?php echo $value['description'] ?></p>
+            <p class='card-text'><?php echo substr($value['description'], 0, 10) ?></p>
             <a href="view.php?id=<?php echo $value['id'] ?>" class="btn btn-primary">Read</a>
           </div>
         </div>
