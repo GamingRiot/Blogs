@@ -57,7 +57,7 @@ if (!$fetch) {
     <div class="d-flex mr-2">
       <?php foreach ($fetch as $value) { ?>
         <div class='card' style='width: 18rem;margin-top:50px;margin-right:20px;background:#a6c8ff;'>
-          <?php if ($value['img_url'] != 'NULL') { ?>
+          <?php if ($value['img_url'] != NULL) { ?>
             <img src="uploads/<?php echo $value['img_url'] ?>" class="card-img-top" alt="...">
           <?php } else { ?>
             <img src="uploads/cover.jpg" class="card-img-top" alt="...">
