@@ -13,19 +13,18 @@ if (isset($_POST['submit'])) {
   if (!empty(($_POST['description']) && ($_POST['title']))) {
     $title = $_POST['title'];
     $desc = $_POST['description'];
-    // $img = $_FILES['image_thumb'];
+    $img = $_FILES['image_thumb'];
     $img_name = $_FILES['image_thumb']['name'];
     $img_tmp_name = $_FILES['image_thumb']['tmp_name'];
-    $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
-    $img_ex_lc = strtolower($img_ex);
-    $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
-    $img_upload_path = 'uploads/' . $new_img_name;
+    $img_ext = pathinfo($img_name, PATHINFO_EXTENSION);
+    $img_ext_lw = strtolower($img_ext);
+    $img_new_name = uniqid("IMG-", true) . '.' . $img_ext_lw;
+    $img_path = "uploads/" . $img_new_name;
+    move_uploaded_file($img_tmp_name, $img_path);
 
-    move_uploaded_file($img_tmp_name, $img_upload_path);
-    // print_r($new_img_name);
     $description = mysqli_real_escape_string($conn, $desc);
     $user_id = $_SESSION['user_id'];
-    $query = "INSERT INTO entries(title,description,user_id,img_url) VALUES('$title','$description','$user_id','$new_img_name')";
+    $query = "INSERT INTO entries(title,description,user_id,img_url) VALUES('$title','$description','$user_id','$img_new_name')";
     $result_query = mysqli_query($conn, $query);
     if (!$result_query) {
       echo "Failed" . mysqli_error($conn);
@@ -78,7 +77,7 @@ if (isset($_POST['submit'])) {
         </div>
         <label for="image_thumb" class="form-label add-header">Add Image</label>
         <input type="file" class="form-control" id="title" name="image_thumb">
-        <input type="submit" value="Submit" name="submit" class="submitInput float-end">
+        <input type="submit" class="btn btn-primary float-end mt-3" id="title" value="Submit" name="submit">
       </form>
     </div>
   </div>
